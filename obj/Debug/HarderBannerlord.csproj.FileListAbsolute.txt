@@ -1,0 +1,9 @@
+D:\GitHub\HarderBannerlord\obj\Debug\HarderBannerlord.csproj.AssemblyReference.cache
+D:\GitHub\HarderBannerlord\obj\Debug\HarderBannerlord.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\HarderBannerlord\obj\Debug\HarderBannerlord.AssemblyInfoInputs.cache
+D:\GitHub\HarderBannerlord\obj\Debug\HarderBannerlord.AssemblyInfo.cs
+D:\GitHub\HarderBannerlord\obj\Debug\HarderBannerlord.csproj.CoreCompileInputs.cache
+D:\GitHub\HarderBannerlord\bin\Debug\HarderBannerlord.dll
+D:\GitHub\HarderBannerlord\bin\Debug\HarderBannerlord.pdb
+D:\GitHub\HarderBannerlord\obj\Debug\HarderBannerlord.dll
+D:\GitHub\HarderBannerlord\obj\Debug\HarderBannerlord.pdb
