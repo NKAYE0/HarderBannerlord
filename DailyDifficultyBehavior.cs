@@ -6,7 +6,6 @@ using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.CampaignSystem.Roster;
 using TaleWorlds.CampaignSystem.Settlements;
 using TaleWorlds.Core;
-using TaleWorlds.Library;
 
 namespace HarderBannerlord.Behaviors
 {
@@ -101,8 +100,6 @@ namespace HarderBannerlord.Behaviors
             if (settings.GrainPerDay > 0 && town.Settlement?.ItemRoster != null)
             {
                 town.Settlement.ItemRoster.AddToCounts(DefaultItems.Grain, settings.GrainPerDay);
-                InformationManager.DisplayMessage(new InformationMessage(
-                    $"[HarderBannerlord DEBUG] Added {settings.GrainPerDay} grain to {town.Name}"));
             }
         }
 
