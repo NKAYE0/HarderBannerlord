@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\HarderBannerlord\\HarderBannerlord.csproj": {}
+    "D:\\GitHub\\HarderBannerlord\\HarderBannerlord\\HarderBannerlord.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\HarderBannerlord\\HarderBannerlord.csproj": {
+    "D:\\GitHub\\HarderBannerlord\\HarderBannerlord\\HarderBannerlord.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\HarderBannerlord\\HarderBannerlord.csproj",
+        "projectUniqueName": "D:\\GitHub\\HarderBannerlord\\HarderBannerlord\\HarderBannerlord.csproj",
         "projectName": "HarderBannerlord",
-        "projectPath": "D:\\GitHub\\HarderBannerlord\\HarderBannerlord.csproj",
+        "projectPath": "D:\\GitHub\\HarderBannerlord\\HarderBannerlord\\HarderBannerlord.csproj",
         "packagesPath": "C:\\Users\\NK\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\HarderBannerlord\\obj\\",
+        "outputPath": "D:\\GitHub\\HarderBannerlord\\HarderBannerlord\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,7 +51,7 @@
         "net472": {
           "framework": "net472",
           "targetAlias": "net472",
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

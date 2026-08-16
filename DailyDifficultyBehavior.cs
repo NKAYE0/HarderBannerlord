@@ -4,7 +4,9 @@ using TaleWorlds.CampaignSystem.Actions;
 using TaleWorlds.CampaignSystem.CharacterDevelopment;
 using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.CampaignSystem.Roster;
+using TaleWorlds.CampaignSystem.Settlements;
 using TaleWorlds.Core;
+using TaleWorlds.Library;
 
 namespace HarderBannerlord.Behaviors
 {
@@ -18,6 +20,7 @@ namespace HarderBannerlord.Behaviors
         public override void RegisterEvents()
         {
             CampaignEvents.DailyTickHeroEvent.AddNonSerializedListener(this, OnDailyTickHero);
+            CampaignEvents.DailyTickEvent.AddNonSerializedListener(this, OnDailyTick);
         }
 
         public override void SyncData(IDataStore dataStore)
@@ -60,6 +63,46 @@ namespace HarderBannerlord.Behaviors
             if (settings.EnableLordTroopXp && party != null)
             {
                 ApplyDailyTroopXp(party, settings);
+            }
+
+            if (settings.EnableLordGrain && party != null)
+            {
+                ApplyDailyLordGrain(party, settings);
+            }
+        }
+
+        private void OnDailyTick()
+        {
+            ModSettings settings = ModSettings.Instance;
+            if (settings == null || !settings.ModEnabled || !settings.EnableSettlementFood)
+            {
+                return;
+            }
+
+            foreach (Town town in Town.AllFiefs)
+            {
+                ApplyDailySettlementFood(town, settings);
+            }
+        }
+
+        private void ApplyDailySettlementFood(Town town, ModSettings settings)
+        {
+            if (town == null)
+            {
+                return;
+            }
+
+            if (settings.FoodStocksPerDay > 0)
+            {
+                int upperLimit = town.FoodStocksUpperLimit();
+                town.FoodStocks = System.Math.Min(town.FoodStocks + settings.FoodStocksPerDay, upperLimit);
+            }
+
+            if (settings.GrainPerDay > 0 && town.Settlement?.ItemRoster != null)
+            {
+                town.Settlement.ItemRoster.AddToCounts(DefaultItems.Grain, settings.GrainPerDay);
+                InformationManager.DisplayMessage(new InformationMessage(
+                    $"[HarderBannerlord DEBUG] Added {settings.GrainPerDay} grain to {town.Name}"));
             }
         }
 
@@ -214,6 +257,28 @@ namespace HarderBannerlord.Behaviors
 
                 roster.AddXpToTroop(troop, settings.TroopXpPerDay);
             }
+        }
+
+        private void ApplyDailyLordGrain(MobileParty party, ModSettings settings)
+        {
+            if (settings.GrainPerTroopPerDay <= 0f || party.ItemRoster == null)
+            {
+                return;
+            }
+
+            int troopCount = party.MemberRoster?.TotalManCount ?? 0;
+            if (troopCount <= 0)
+            {
+                return;
+            }
+
+            int grainAmount = (int)(troopCount * settings.GrainPerTroopPerDay);
+            if (grainAmount <= 0)
+            {
+                return;
+            }
+
+            party.ItemRoster.AddToCounts(DefaultItems.Grain, grainAmount);
         }
     }
 }

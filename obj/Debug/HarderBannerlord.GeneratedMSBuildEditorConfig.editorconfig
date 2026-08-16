@@ -1,6 +1,6 @@
 is_global = true
 build_property.RootNamespace = HarderBannerlord
-build_property.ProjectDir = D:\GitHub\HarderBannerlord\
+build_property.ProjectDir = D:\GitHub\HarderBannerlord\HarderBannerlord\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false

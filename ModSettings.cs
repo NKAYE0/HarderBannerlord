@@ -143,6 +143,18 @@ namespace HarderBannerlord.Settings
         [SettingPropertyGroup("AI Lord Troop XP")]
         public int TroopXpPerDay { get; set; } = 5000;
 
+        // ==================== AI LORD GRAIN ====================
+
+        [SettingPropertyBool("Enable Daily Grain For Lords", Order = 0, RequireRestart = false,
+            HintText = "If enabled, AI lords receive grain directly into their party's inventory every day, helping sustain their army on campaign. The player is never affected.")]
+        [SettingPropertyGroup("AI Lord Grain")]
+        public bool EnableLordGrain { get; set; } = true;
+
+        [SettingPropertyFloatingInteger("Grain Per Troop Per Day", 1f, 20f, "0.0", Order = 1, RequireRestart = false,
+            HintText = "The amount of grain added to each AI lord's party inventory every day, multiplied by the number of troops in their party. For example, a value of 5 gives a 100-troop party 500 grain per day.")]
+        [SettingPropertyGroup("AI Lord Grain")]
+        public float GrainPerTroopPerDay { get; set; } = 5f;
+
         // ==================== AI LORD PARTY SIZE ====================
 
         [SettingPropertyBool("Enable Party Size Scaling", Order = 0, RequireRestart = false,
@@ -154,5 +166,22 @@ namespace HarderBannerlord.Settings
             HintText = "Scales AI lords' base party size limit. 100% makes no change. Below 100% shrinks max party sizes, above 100% grows them. For example, 150% means an AI lord who could normally lead 100 troops can now lead 150.")]
         [SettingPropertyGroup("AI Lord Party Size")]
         public int PartySizeScalePercent { get; set; } = 100;
+
+        // ==================== SETTLEMENT FOOD ====================
+
+        [SettingPropertyBool("Enable Daily Settlement Food", Order = 0, RequireRestart = false,
+            HintText = "If enabled, every town and castle (including the player's) gains bonus food stocks and grain every day.")]
+        [SettingPropertyGroup("Settlement Food")]
+        public bool EnableSettlementFood { get; set; } = true;
+
+        [SettingPropertyInteger("Food Stocks Per Day", 0, 500, "0", Order = 1, RequireRestart = false,
+            HintText = "The amount added to a settlement's food stock value every day, capped at that settlement's maximum food stock capacity.")]
+        [SettingPropertyGroup("Settlement Food")]
+        public int FoodStocksPerDay { get; set; } = 20;
+
+        [SettingPropertyInteger("Grain Per Day", 0, 500, "0", Order = 2, RequireRestart = false,
+            HintText = "The amount of grain added to a settlement's market stores every day.")]
+        [SettingPropertyGroup("Settlement Food")]
+        public int GrainPerDay { get; set; } = 10;
     }
 }

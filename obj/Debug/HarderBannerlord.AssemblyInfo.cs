@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HarderBannerlord")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a2b1a1ab1af66e2a67bc9fb6d7a9c9d2f7ef3e23")]
 [assembly: System.Reflection.AssemblyProductAttribute("HarderBannerlord")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HarderBannerlord")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
